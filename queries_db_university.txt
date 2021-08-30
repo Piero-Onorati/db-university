@@ -12,10 +12,10 @@ WHERE `cfu` > 10;
 
 3) Selezionare tutti gli studenti che hanno più di trentanni.
 
-SELECT `name`, YEAR(`date_of_birth`) 
+SELECT * 
 FROM `students`
-WHERE YEAR(CURDATE()) - YEAR(`date_of_birth` ) > 30
-ORDER BY YEAR(`date_of_birth`) DESC ;
+WHERE TIMESTAMPDIFF(year,`date_of_birth`, CURDATE())> 30  
+ORDER BY `students`.`date_of_birth` DESC ;
 
 
 4) Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea.
